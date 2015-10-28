@@ -1,10 +1,10 @@
-FROM ubuntu:trusty
+FROM ubuntu:wily
 
 MAINTAINER Wurstmeister 
 
 ENV KAFKA_VERSION="0.8.2.1" SCALA_VERSION="2.10"
 
-RUN apt-get update && apt-get install -y unzip openjdk-6-jdk wget curl git docker.io jq
+RUN apt-get update && apt-get install -y unzip openjdk-8-jdk wget curl git docker.io jq net-tools
 
 ADD download-kafka.sh /tmp/download-kafka.sh
 RUN /tmp/download-kafka.sh
